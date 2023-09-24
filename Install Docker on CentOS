@@ -24,3 +24,20 @@ sudo yum remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 
+#Manage Docker as a non-root user
+#To create the docker group and add your user:
+#Create the docker group.
+sudo groupadd docker
+
+#Add your user to the docker group.
+sudo usermod -aG docker $USER
+
+#Configure Docker to start on boot with systemd
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+#To stop this behavior, use disable instead.
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service
+
+
