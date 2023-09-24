@@ -1,0 +1,50 @@
+#Working With Docker Images
+#Search for Docker Images:
+sudo docker search ubuntu    #[ubuntu] is a image name, here as our needed images.
+
+#Pull a Docker Image:
+#download the official Ubuntu image by running
+sudo docker pull ubuntu
+
+#See Downloaded Images:
+sudo docker images
+
+#Run a Docker Container with non-interactive mode:
+sudo docker run ubuntu    #[ubuntu] is our downloaded image. if isn't download previously, so download image when run this command.
+
+#Run a Docker Container with a container name and non-interactive mode.
+#sudo docker run --name [container-name] [image-name]
+sudo docker run --name myubuntu ubuntu
+
+#Run a Docker Container with interactive shell access.
+sudo docker run -it ubuntu
+
+#View Docker Containers:
+sudo docker ps    #The command outputs a list of active containers.
+
+sudo docker ps -a    #To list all containers, including the inactive ones, add the -a flag.
+
+sudo docker ps -l    #show only the latest container by passing the -l flag.
+
+#Start a Docker Container:
+#sudo docker start [container-ID or container-name]
+
+sudo docker start 5f9478691970    #[5f9478691970] is a container ID. we can use container name.
+sudo docker start ubuntu
+
+#Stop a Docker Container:
+#sudo docker stop [container-ID | container-name]
+
+sudo docker stop 5f9478691970    #[5f9478691970] is a container ID. we can use container name.
+
+#Remove a Docker Container:
+#sudo docker rm [container-ID | container-name]
+
+sudo docker rm ubuntu    #[ubuntu] is a container name. we can use container ID.
+
+
+
+#
+
+
+
